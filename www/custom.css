@@ -1,0 +1,16 @@
+hr { 
+  border-top: 1px solid grey;
+} 
+.tableTitle { 
+  font-weight:bold; 
+  color:black; 
+}
+.pCrit {
+  font-weight:bold;
+  color:red; 
+}
+.result {
+  padding:10px;
+  width:90%;
+  text-align:center;
+}

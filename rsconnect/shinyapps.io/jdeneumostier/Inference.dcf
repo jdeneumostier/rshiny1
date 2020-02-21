@@ -1,0 +1,12 @@
+name: Inference
+title: Inference
+username:
+account: jdeneumostier
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1844136
+bundleId: 2817698
+url: https://jdeneumostier.shinyapps.io/Inference/
+when: 1582283627.31576
+asMultiple: FALSE
+asStatic: FALSE
