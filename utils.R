@@ -16,3 +16,11 @@ computeStats <- function(values, alpha) {
                     paste("Upper ",1-alpha,"% CL for Mean", sep=""))
   return(stats)  
 }
+
+formatPvalue <- function(pValue, decimals=4) {
+  if (pValue < 0.0001) {
+    return("< 0.0001")
+  } else {
+    return(toString(round(pValue, decimals)))
+  }
+}

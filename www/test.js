@@ -1,3 +1,3 @@
-/*$(document).on('shiny:connected', function(event) {
-  alert('Connected to the server');
-});*/
+shinyjs.pipi = function(params) {
+  alert("pipi");
+}

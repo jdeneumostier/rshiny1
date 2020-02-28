@@ -44,18 +44,18 @@ server <- function(input, output, session) {
       p(errorMsg(), class="bg-danger text-danger result")
     }
   )
-
+  
   # Affichage des stats
   output$stats <- renderTable(
     {
       mydata = getData()
-
       if (!is.null(mydata)) computeStats(mydata, input$alpha);
+
     },
     rownames = TRUE, colnames = FALSE, spacing = c("l"), digits=2, align = "?",
     caption="<span class='tableTitle'>Descriptive statistics</span>",
     caption.placement = getOption("xtable.caption.placement", "top")
-  )
+  )    
 
   # # Histogramme
   output$histo <- renderPlot({
@@ -118,11 +118,8 @@ server <- function(input, output, session) {
     mydata = getData()
     if (is.null(mydata)) return(NULL)
     result <- t.test(mydata, mu=input$m0, alternative=input$alternative, conf.level=1-input$alpha)
-    if (result$p.value < 0.0001) {
-      result$p.value = "< 0.0001"
-    } else {
-      result$p.value = toString(round(result$p.value, 4))
-    }
+    result$p.value <- formatPvalue(result$p.value)
+
     tTest = data.frame(
       "df" = result$parameter,
       "statistic" = result$statistic,
